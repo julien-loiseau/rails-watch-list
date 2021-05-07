@@ -1,0 +1,13 @@
+
+<div class="container mt-4">
+  <div class="container d-flex justify-content-center mb-3">
+    <h1 class="text-align-center">All my lists</h1>
+  </div>
+  <div class="container d-flex">
+    <% @lists.each do |list| %>
+    <div class="pl-3 mb-5"><%= link_to list.name, list_path(list), class: "btn btn-secondary" %></div>
+    <% end %>
+  </div>
+
+  <%= link_to "Add a new list", new_list_path %>
+</div>
