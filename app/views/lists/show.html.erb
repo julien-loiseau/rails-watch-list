@@ -13,11 +13,9 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><%= movie.rating %></li>
-        <li class="list-group-item"><% @list.bookmarks.each do |bookmark| %>
-        <%= bookmark.comment %>
-        <% end %>
-        </li>
         <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <li class="list-group-item"><%= bookmark.comment %>
+        </li>
         <li class="list-group-item"><%= link_to "Delete", bookmark_path(bookmark), method: :delete %></li>
       </ul>
     </div>
